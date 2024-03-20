@@ -1,0 +1,21 @@
+{
+  "ModId": "P3R.BattleStuff.Reloaded",
+  "ModName": "P3R Battle Stuff",
+  "ModAuthor": "zutomayofan50",
+  "ModVersion": "1.0.0",
+  "ModDescription": "battle stuff",
+  "ModDll": "P3R.BattleStuff.Reloaded.dll",
+  "ModIcon": "Preview.png",
+  "ModR2RManagedDll32": "x86/P3R.BattleStuff.Reloaded.dll",
+  "ModR2RManagedDll64": "x64/P3R.BattleStuff.Reloaded.dll",
+  "ModNativeDll32": "",
+  "ModNativeDll64": "",
+  "IsLibrary": false,
+  "ReleaseMetadataFileName": "P3R.BattleStuff.Reloaded.ReleaseMetadata.json",
+  "PluginData": {},
+  "IsUniversalMod": false,
+  "ModDependencies": [ "reloaded.sharedlib.hooks" ],
+  "OptionalDependencies": [],
+  "SupportedAppId": [],
+  "ProjectUrl": ""
+}

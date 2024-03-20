@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3R.BattleStuff.Reloaded", "P3R.BattleStuff.Reloaded\P3R.BattleStuff.Reloaded.csproj", "{BE081D34-7C2F-46ED-9F97-522D19638468}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unreal.ObjectsEmitter.Interfaces", "submodules\Unreal.ObjectsEmitter\Unreal.ObjectsEmitter.Interfaces\Unreal.ObjectsEmitter.Interfaces.csproj", "{D932DE7C-E3B9-4873-B70E-77E2CAD20835}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BE081D34-7C2F-46ED-9F97-522D19638468}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE081D34-7C2F-46ED-9F97-522D19638468}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE081D34-7C2F-46ED-9F97-522D19638468}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D932DE7C-E3B9-4873-B70E-77E2CAD20835}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D932DE7C-E3B9-4873-B70E-77E2CAD20835}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D932DE7C-E3B9-4873-B70E-77E2CAD20835}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D932DE7C-E3B9-4873-B70E-77E2CAD20835}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

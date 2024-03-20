@@ -14,8 +14,8 @@
   "ReleaseMetadataFileName": "P3R.BattleStuff.Reloaded.ReleaseMetadata.json",
   "PluginData": {},
   "IsUniversalMod": false,
-  "ModDependencies": [ "reloaded.sharedlib.hooks" ],
+  "ModDependencies": [ "reloaded.sharedlib.hooks", "Unreal.ObjectsEmitter.Reloaded" ],
   "OptionalDependencies": [],
-  "SupportedAppId": [],
+  "SupportedAppId": ["p3r.exe"],
   "ProjectUrl": ""
 }

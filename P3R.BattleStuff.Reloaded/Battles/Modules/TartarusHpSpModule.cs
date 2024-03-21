@@ -62,10 +62,9 @@ internal unsafe class TartarusHpSpModule : IGameModule
             var delta = currentTime - prevSpDotTime;
             if (delta.TotalMilliseconds >= this.dotTimeMs)
             {
-                Log.Debug($"Tartarus HP/SP DOT || Max HP %: {this.maxHpDotRatio:P2} || Max SP %: {this.maxSpDotRatio:P2}");
+                Log.Debug($"Tartarus HP/SP DOT || HP: -{this.maxHpDotRatio:P0} Max HP || SP: -{this.maxSpDotRatio:P0} Max SP");
                 for (int i = 0; i < PlayerParty.LENGTH; i++)
                 {
-                    var character = (Character)i + 1;
                     var unit = &snapshot.CurrentState->Party[i];
                     var spDamage = int.Max(1, (int)(this.getMaxSp!(unit) * this.maxSpDotRatio));
                     var hpDamage = int.Max(1, (int)(this.getMaxHp!(unit) * this.maxHpDotRatio));
@@ -73,12 +72,12 @@ internal unsafe class TartarusHpSpModule : IGameModule
                     var currentSp = unit->Status.Sp;
                     var currentHp = unit->Status.Hp;
                     var newSp = int.Clamp(currentSp - spDamage, 0, currentSp);
-                    var newHp = int.Clamp(currentHp - hpDamage, 1, currentHp);
+                    var newHp = int.Clamp(currentHp - hpDamage, 0, currentHp);
 
                     unit->Status.Sp = newSp;
                     unit->Status.Hp = newHp;
 
-                    Log.Debug($"{character} || -{hpDamage} HP || -{spDamage} SP");
+                    Log.Debug($"{unit->ID} || -{hpDamage} HP || -{spDamage} SP");
                 }
 
                 this.prevSpDotTime = currentTime;
@@ -92,6 +91,6 @@ internal unsafe class TartarusHpSpModule : IGameModule
         this.maxHpDotRatio = (double)config.TartarusHpSp_MaxHpDotRatio / 100;
         this.maxSpDotRatio = (double)config.TartarusHpSp_MaxSpDotRatio / 100;
 
-        Log.Debug($"Tartarus HP/SP DOT || HP: {this.maxHpDotRatio:P0} Max HP || SP: {this.maxSpDotRatio:P0} Max SP");
+        Log.Debug($"Tartarus HP/SP DOT || HP: -{this.maxHpDotRatio:P0} Max HP || SP: -{this.maxSpDotRatio:P0} Max SP");
     }
 }

@@ -30,7 +30,7 @@ public unsafe struct FDatUnitWork
 {
     [FieldOffset(0x0000)] public uint flags;
     [FieldOffset(0x0004)] public ushort genus;
-    [FieldOffset(0x0008)] public uint ID;
+    [FieldOffset(0x0008)] public Character ID;
     [FieldOffset(0x000C)] public FDatUnitStatus Status;
     //[FieldOffset(0x002C)] public FDatUnitSupport support;
     //[FieldOffset(0x0048)] public FDatUnitPersona persona;

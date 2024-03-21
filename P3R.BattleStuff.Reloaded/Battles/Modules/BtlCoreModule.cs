@@ -180,6 +180,7 @@ public unsafe struct FBtlEncountParam
 }
 
 public enum EBtlEncountPreemptive
+    : byte
 {
     Normal = 0,
     Enemy = 1,

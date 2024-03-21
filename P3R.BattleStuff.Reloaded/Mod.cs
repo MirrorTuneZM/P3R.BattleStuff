@@ -7,6 +7,7 @@ using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
 using System.Diagnostics;
 using System.Drawing;
+using Unreal.ObjectsEmitter.Interfaces;
 
 namespace P3R.BattleStuff.Reloaded;
 
@@ -41,10 +42,12 @@ public unsafe class Mod : ModBase
 #endif
 
         this.modLoader.GetController<IStartupScanner>().TryGetTarget(out var scanner);
+        this.modLoader.GetController<IDataTables>().TryGetTarget(out var dataTables);
         this.gameService = new();
         this.gameModules =
         [
             new TartarusHpSpModule(),
+            new BtlCoreModule(dataTables!),
         ];
 
         this.battleService = new(this.gameService, this.gameModules);

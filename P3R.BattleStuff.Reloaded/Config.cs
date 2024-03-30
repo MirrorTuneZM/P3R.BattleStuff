@@ -10,18 +10,22 @@ public class Config : Configurable<Config>
     public const int TartarusHpSp_MaxHpDotRatio_DEFAULT = 2;
     public const int TartarusHpSp_MaxSpDotRatio_DEFAULT = 2;
 
-    public const double BtlNormal_ExpMuti_DEFAULT = 0.75;
+    public const double BtlNormal_ExpMuti_DEFAULT = 0.60;
+    public const double BtlAdvantage_ExpMuti_DEFAULT = 1.15;
+    public const double BtlDisadvantage_ExpMuti_DEFAULT = 0.85;
+
     public const double BtlNormal_EnemyDamageMuti_DEFAULT = 1;
-
-    public const double BtlAdvantage_ExpMuti_DEFAULT = 1.20;
     public const double BtlAdvantage_EnemyDamageMuti_DEFAULT = 1;
-
-    public const double BtlDisadvantage_ExpMuti_DEFAULT = 1;
-    public const double BtlDisadvantage_EnemyDamageMuti_DEFAULT = 1.15;
+    public const double BtlDisadvantage_EnemyDamageMuti_DEFAULT = 1.2;
 
     [DisplayName("Log Level")]
     [DefaultValue(LogLevel.Information)]
     public LogLevel LogLevel { get; set; } = LogLevel.Information;
+
+    [Category("Tartarus HP/SP Module")]
+    [DisplayName("Enabled")]
+    [DefaultValue(true)]
+    public bool TartarusHpSp_Enabled { get; set; } = true;
 
     [Category("Tartarus HP/SP Module")]
     [DisplayName("HP/SP DOT Seconds")]

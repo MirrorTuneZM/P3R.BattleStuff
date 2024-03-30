@@ -17,6 +17,7 @@ internal unsafe class TartarusHpSpModule : IGameModule
 
     private DateTime prevSpDotTime = DateTime.Now;
 
+    private bool isEnabled = true;
     private int dotTimeMs = Config.TartarusHpSp_DotTimeSeconds_DEFAULT * 1000;
     private double maxHpDotRatio = (double)Config.TartarusHpSp_MaxHpDotRatio_DEFAULT / 100;
     private double maxSpDotRatio = (double)Config.TartarusHpSp_MaxSpDotRatio_DEFAULT / 100;
@@ -56,7 +57,7 @@ internal unsafe class TartarusHpSpModule : IGameModule
 
     public void UpdateGameState(GameStateSnapshot snapshot)
     {
-        if (this.getFloorNo!() > 0)
+        if (this.isEnabled && this.getFloorNo!() > 0)
         {
             var currentTime = DateTime.Now;
             var delta = currentTime - prevSpDotTime;
@@ -87,6 +88,7 @@ internal unsafe class TartarusHpSpModule : IGameModule
 
     public void ApplyConfig(Config config)
     {
+        this.isEnabled = config.TartarusHpSp_Enabled;
         this.dotTimeMs = config.TartarusHpSp_DotTimeSeconds * 1000;
         this.maxHpDotRatio = (double)config.TartarusHpSp_MaxHpDotRatio / 100;
         this.maxSpDotRatio = (double)config.TartarusHpSp_MaxSpDotRatio / 100;
